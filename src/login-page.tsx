@@ -1,16 +1,27 @@
-import { useRef } from "react"
+import { InteractionType } from '@azure/msal-browser';
+import { useMsalAuthentication } from '@azure/msal-react'
+import { useEffect, useState } from 'react';
 import './css/login-page.css'
 
 
 export default function LoginPage() {
 
-    const usernameInput = useRef<HTMLInputElement>(null);
-    const passwordInput = useRef<HTMLInputElement>(null);
+    const {login, result, error} = useMsalAuthentication(InteractionType.Popup);
+
+    const [click, setClick] = useState<{}>();
+
+    useEffect(() => {
+        if(!click) {
+            return;
+        }
+        (async ()=> {
+
+        })()
+    },[click]);
 
     return (<>
         <div className="container">
-            <input type="text" ref={usernameInput}/>
-            <input type="password" ref={passwordInput}/>
+            <button title='Login' onClick={()=> setClick({...click})}>Click</button>
         </div>
     </>)
 }
