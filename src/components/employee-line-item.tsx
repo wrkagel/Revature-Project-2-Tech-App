@@ -5,7 +5,7 @@ export default function EmployeeLineItem(props:Employee) {
 
     const {id, fname, lname, username, isManager} = props;
 
-    return(<tr>
+    return(<tr className="table-warning">
         <td>{id}</td>
         <td>{fname}</td>
         <td>{lname}</td>
