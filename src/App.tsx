@@ -1,13 +1,26 @@
 import { useIsAuthenticated } from '@azure/msal-react';
-import './App.css';
-import HomePage from './home-page';
-import LoginPage from './login-page';
+import HomePage from './components/home-page';
+import LoginPage from './components/login-page';
 
-const isAuthenticated = useIsAuthenticated();
+import { MsalProvider } from "@azure/msal-react";
+import { Configuration,  PublicClientApplication } from "@azure/msal-browser";
 
 function App() {
+
+// MSAL configuration
+const configuration: Configuration = {
+    auth: {
+        clientId: "client-id"
+    }
+};
+
+const pca = new PublicClientApplication(configuration);
+
+  // const isAuthenticated = useIsAuthenticated();
+  const isAuthenticated = true;
+
   return (<>
-    <h1>Triple Threat Vacations Technology Specialist Login</h1>
+    <h1>Triple Threat Vacations Technology Specialist Site</h1>
     {isAuthenticated ? <HomePage /> : <LoginPage />}
   </>);
 }
