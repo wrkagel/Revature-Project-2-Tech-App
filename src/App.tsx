@@ -1,4 +1,4 @@
-import { AuthenticatedTemplate, UnauthenticatedTemplate, useIsAuthenticated } from '@azure/msal-react';
+import { AuthenticatedTemplate, UnauthenticatedTemplate } from '@azure/msal-react';
 import HomePage from './components/home-page';
 import LoginPage from './components/login-page';
 
@@ -6,8 +6,6 @@ import { MsalProvider } from "@azure/msal-react";
 import { Configuration,  PublicClientApplication } from "@azure/msal-browser";
 
 function App() {
-
-  const isAuthenticated = useIsAuthenticated();
 
   // MSAL configuration
   const configuration: Configuration = {
