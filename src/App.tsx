@@ -1,6 +1,6 @@
 import { useIsAuthenticated } from '@azure/msal-react';
-import HomePage from './home-page';
-import LoginPage from './login-page';
+import HomePage from './components/home-page';
+import LoginPage from './components/login-page';
 
 import { MsalProvider } from "@azure/msal-react";
 import { Configuration,  PublicClientApplication } from "@azure/msal-browser";

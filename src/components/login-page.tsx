@@ -1,7 +1,7 @@
 import { InteractionType } from '@azure/msal-browser';
-import { useMsalAuthentication } from '@azure/msal-react'
+import { useMsalAuthentication } from '@azure/msal-react';
 import { useEffect, useState } from 'react';
-import './css/login-page.css'
+import '../css/login-page.css';
 
 
 export default function LoginPage() {
